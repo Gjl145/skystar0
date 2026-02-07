@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>今晚，整片星空将为你一人闪烁</title>
+    <style>
+      /* 可以在这里添加自定义样式 */
+    </style>
+    <link rel="stylesheet" href="skystar.css">
+  </head>
+  <body>
+    <video id="videofilm" poster="img/skystar2.jpg" autoplay muted loop>
+      <source src="skystar.mp4" type="video/mp4">
+    </video>
+    <div class="textone">
+      <h1>look at the stars</h1>
+    </div>
+    <div class="texttwo">
+      <h1>look how they shine for u</h1>
+    </div>
+    <div class="textthree">
+      <h1></h1>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="bgm" src="sunny.mp3" loop></audio>
+
+    <div class="container"></div>
+
+    <!-- 引入其他JS文件 -->
+    <script src="skystar.js"></script>
+
+    <script>
+      const audio = document.getElementById('bgm');
+
+      // 等待用户点击页面后播放音频
+      document.addEventListener('click', function () {
+        audio.play().catch((err) => {
+          console.log("Autoplay prevented:", err);
+        });
+      }, { once: true });
+    </script>
+  </body>
+</html>
